@@ -48,7 +48,7 @@
 <title>HOMEPAGE</title>
 <style>
   body, html{
-    background: #1B4D46;
+    background: blue;
     height: 100%;
     margin: 0;
   }
