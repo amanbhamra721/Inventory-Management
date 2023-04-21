@@ -1,0 +1,38 @@
+{
+    "name": "Inventory Management App",
+    "description": "A simple PHP application deployed on Heroku",
+    "repository": "https://github.com/amanbhamra721/Inventory-Management.git",
+    "env": {
+      "APP_ENV": {
+        "description": "The environment for the application",
+        "value": "development"
+      },
+      "APP_DEBUG": {
+        "description": "Whether to enable debugging",
+        "value": "false"
+      },
+      "APP_KEY": {
+        "description": "The encryption key for the application",
+        "generator": "secret"
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/php"
+      }
+    ],
+    "addons": [
+        "heroku addons:create cleardb:ignite"
+    ],
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+    "scripts": {
+      "postdeploy": "php artisan migrate --force"
+    },
+    "stack": "heroku-20"
+  }
+  
